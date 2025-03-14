@@ -1,9 +1,9 @@
 /***********************************************
 *
 * @Proposito: Almacena las funciones de la libreria LS_ALLEGRO
-* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandro.viana - blai.jordan
+* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandrov44 - blakjord
 * @Fecha creacion: 3/3/20
-* @Fecha ultima modificacion: 26/04/2020
+* @Fecha ultima modificacion: 14/03/2025
 *
 ************************************************/
 

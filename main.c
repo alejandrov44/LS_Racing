@@ -1,9 +1,9 @@
 /***********************************************
 *
 * @Proposito: Almacena la funcion principal.
-* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandro.viana - blai.jordan
+* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandrov44 - blakjord
 * @Fecha creacion: 3/3/20
-* @Fecha ultima modificacion: 26/04/2020
+* @Fecha ultima modificacion: 14/03/2025
 *
 ************************************************/
 
@@ -19,7 +19,7 @@
 *             ver la clasificacion y la de guardar la temporada.
 * @Parametros:  in: argc = numero de argumentos que se le pasan a la funcion.
 *               in: veces = matriz que almacena todos los argumentos que se le pasan a la funcion.
-* @Retorno: Retorna un entero 0 si tod0 el programa finaliza sin problemas.
+* @Retorno: Retorna un entero 0 si todo el programa finaliza sin problemas.
 *
 ************************************************/
 int main(int argc, char *argv[]){

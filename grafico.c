@@ -1,9 +1,9 @@
 /***********************************************
 *
 * @Proposito: Almacena las funciones sobre el apartado grafico de la configuracion de nuestro piloto.
-* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandro.viana - blai.jordan
+* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandrov44 - blakjord
 * @Fecha creacion: 3/3/20
-* @Fecha ultima modificacion: 26/04/2020
+* @Fecha ultima modificacion: 14/03/2025
 *
 ************************************************/
 
@@ -79,15 +79,15 @@ void dibujaPanelConfiguracion(General general, Coche * coche){
     //Inicializamos Allegro
     LS_allegro_init(anchoPantalla,altoPantalla,"Configuración Pantalla");
     ALLEGRO_BITMAP * boxes = NULL;
-    boxes = al_load_bitmap("boxes.png");
+    boxes = al_load_bitmap("../assets/boxes.png");
     ALLEGRO_BITMAP * cotxe = NULL;
-    cotxe = al_load_bitmap("cotxe.png");
+    cotxe = al_load_bitmap("../assets/cotxe.png");
     ALLEGRO_BITMAP * gasolina = NULL;
-    gasolina = al_load_bitmap("gasolina.png");
+    gasolina = al_load_bitmap("../assets/gasolina.png");
     ALLEGRO_BITMAP * motor = NULL;
-    motor = al_load_bitmap("motor.png");
+    motor = al_load_bitmap("../assets/motor.png");
     ALLEGRO_BITMAP * neumaticos = NULL;
-    neumaticos = al_load_bitmap("neumaticos.png");
+    neumaticos = al_load_bitmap("../assets/neumaticos.png");
     pintaConfig(general,coche,x[y],y,boxes,neumaticos,cotxe,gasolina,motor);
     while(!nSortir){
         if(LS_allegro_key_pressed(ALLEGRO_KEY_UP)){

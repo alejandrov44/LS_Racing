@@ -1,9 +1,9 @@
 /***********************************************
 *
 * @Proposito: Almacena las funciones de la lectura de ficheros.
-* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandro.viana - blai.jordan
+* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandrov44 - blakjord
 * @Fecha creacion: 3/3/20
-* @Fecha ultima modificacion: 26/04/2020
+* @Fecha ultima modificacion: 14/03/2025
 *
 ************************************************/
 
@@ -39,7 +39,7 @@ General lecturaPiezas(char * argv, General general) {
     char cadena[50], aux = ' ';
     FILE * fp = fopen(argv, "r");
     if (fp == NULL) {
-        printf("Error: Fichero inexistente.\n\n");
+        printf("Error: Fichero de piezas inexistente.\n\n");
         exit(0);
     }
     fscanf(fp,"%d",&general.numCategorias);
@@ -92,7 +92,7 @@ General lecturaGPs(char * argv, General general){
     struct _node * new_node;
     FILE * fp = fopen(argv, "r");
     if (fp == NULL) {
-        printf("Error: Fichero inexistente.\n\n");
+        printf("Error: Fichero de GP's inexistente.\n\n");
         exit(0);
     }
     fscanf(fp, "%d", &general.numGPs);
@@ -132,7 +132,7 @@ General lecturaGPs(char * argv, General general){
 General lecturaCorredores(char * argv, General general){
     FILE * fp = fopen(argv, "r");
     if (fp == NULL) {
-        printf("Error: Fichero inexistente.\n\n");
+        printf("Error: Fichero de corredores inexistente.\n\n");
         exit(0);
     }
     general.corredor = (Corredor*)malloc(sizeof(Corredor)*7);
@@ -154,7 +154,7 @@ General lecturaCorredores(char * argv, General general){
 General lecturaBase(char * argv, General general){
     FILE * fp = fopen(argv, "r");
     if (fp == NULL) {
-        printf("Error: Fichero inexistente.\n\n");
+        printf("Error: Fichero base inexistente.\n\n");
         exit(0);
     }
     fread(&general.base, sizeof(Base), 1, fp);

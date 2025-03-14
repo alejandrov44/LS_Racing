@@ -1,13 +1,14 @@
 /***********************************************
 *
 * @Proposito: Almacena las funciones de la carrera.
-* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandro.viana - blai.jordan
+* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandrov44 - blakjord
 * @Fecha creacion: 3/3/20
-* @Fecha ultima modificacion: 26/04/2020
+* @Fecha ultima modificacion: 14/03/2025
 *
 ************************************************/
 
 #include "carrera.h"
+#include <windows.h>
 
 /***********************************************
 *
@@ -50,10 +51,10 @@ void semaforo(){
             al_draw_filled_circle(240 + i, 350, 25, LS_allegro_get_color(RED));
         }
         LS_allegro_clear_and_paint(WHITE);
-        sleep(1);
+        Sleep(1);
         aux += 100;
     }
-    sleep(1);
+    Sleep(1);
 }
 
 /***********************************************
@@ -265,7 +266,7 @@ void carrera(General general, Coche coche, int veces){
     LS_allegro_init(anchoPantalla,altoPantalla,"Carrera");
     ALLEGRO_BITMAP * cotxe = NULL;
     ALLEGRO_TIMER * timer = al_create_timer(1);
-    cotxe = al_load_bitmap("cotxe.png");
+    cotxe = al_load_bitmap("../assets/cotxe.png");
     pintarPantallaInicio(*circuito);
     semaforo();
     calculosCarrera(general, coche, *circuito, tiempoTotal, numStops);
