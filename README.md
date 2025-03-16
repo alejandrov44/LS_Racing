@@ -43,7 +43,7 @@ This is a simple racing simulator game written in C, using the Allegro 5 library
 
 4.  **Run the Game:**
     * The executable `LS_Racing.exe` will be created in the `build` directory.
-    * Execute the .exe with all the parameters needed (the configuration of the IA).
+    * Execute the .exe with all the parameters needed (the configuration for the IA).
     ```bash
     ./LS_Racing.exe ../assets/fitxerPeces.txt ../assets/fitxerGPs.txt ../assets/fitxerCorredors.bin ../assets/fitxerBase.bin
     ```

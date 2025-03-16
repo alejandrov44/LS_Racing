@@ -43,7 +43,7 @@ Este es un sencillo simulador de carreras escrito en C, utilizando la libreria A
 
 4.  **Ejecutar el Juego:**
     * Se generará el ejecutable `LS_Racing.exe` en el directorio `build`.
-    * Ejecuta el .exe con todos los parámetros necesarios (configuración de la IA).
+    * Ejecuta el .exe con todos los parámetros necesarios (configuración para la IA).
     ```bash
     ./LS_Racing.exe ../assets/fitxerPeces.txt ../assets/fitxerGPs.txt ../assets/fitxerCorredors.bin ../assets/fitxerBase.bin
     ```

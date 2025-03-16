@@ -1,9 +1,9 @@
 /***********************************************
 *
 * @Proposito: Almacena las funciones de la lectura de ficheros.
-* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandrov44 - blakjord
+* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandro.viana - blai.jordan
 * @Fecha creacion: 3/3/20
-* @Fecha ultima modificacion: 14/03/2025
+* @Fecha ultima modificacion: 26/04/2020
 *
 ************************************************/
 
@@ -28,6 +28,23 @@ General lecturaFicheros(char * argv[]){
 
 /***********************************************
 *
+* @Finalidad: Funcion que comprueba si in fichero esta vacio o no, en caso de que lo este termina el programa mandando antes un error.
+* @Parametros:  in: fp = direccion del fichero al que le haremos la comprobacion.
+* @Retorno: No devuelve nada.
+*
+************************************************/
+void comprobarFicharo(FILE * fp){
+    char aux = ' ';
+    fscanf(fp, "%c", &aux);
+    if (aux == ' '){
+        printf("Error. Hay un fichero vacio.");
+        exit(-1);
+    }
+    fseek(fp, 0, SEEK_SET);
+}
+
+/***********************************************
+*
 * @Finalidad: Funcion de lectura del fichero txt de piezas, la lectura se hace linea a linea leyendo cada pieza el numero de veces que se indica al pricipio,
               se almacena tod0 en un struct Categoria dandole espacio de forma dinamica.
 * @Parametros:  in: argv = String del nombre del fichero que se va a leer.
@@ -39,11 +56,13 @@ General lecturaPiezas(char * argv, General general) {
     char cadena[50], aux = ' ';
     FILE * fp = fopen(argv, "r");
     if (fp == NULL) {
-        printf("Error: Fichero de piezas inexistente.\n\n");
-        exit(0);
+        printf("Error: Fichero inexistente.\n\n");
+        exit(-1);
     }
+    comprobarFicharo(fp);
     fscanf(fp,"%d",&general.numCategorias);
     general.categoria = malloc(sizeof(Categoria));
+    //Bucle que lee todas las categorias
     for (int i = 0; i < general.numCategorias; ++i) {
         general.categoria = (Categoria*)realloc(general.categoria, sizeof(Categoria)*(i+1));
         fscanf(fp,"%s",general.categoria[i].nombreCategoria);
@@ -56,6 +75,7 @@ General lecturaPiezas(char * argv, General general) {
         }
         fscanf(fp,"%d", &general.categoria[i].numPiezas);
         general.categoria[i].pieza = (Pieza*)malloc(sizeof(Pieza));
+        //Bucle que lee todas las piezas de la categoria
         for (int j = 0; j < general.categoria[i].numPiezas; ++j) {
             general.categoria[i].pieza = (Pieza*)realloc(general.categoria[i].pieza, sizeof(Pieza)*(j+1));
             fscanf(fp,"%s",general.categoria[i].pieza[j].nombrePieza);
@@ -88,13 +108,13 @@ General lecturaPiezas(char * argv, General general) {
 General lecturaGPs(char * argv, General general){
     char cadena[50], aux = ' ';
     GP gpaux;
-    general.listaGP = NULL;
     struct _node * new_node;
     FILE * fp = fopen(argv, "r");
     if (fp == NULL) {
-        printf("Error: Fichero de GP's inexistente.\n\n");
-        exit(0);
+        printf("Error: Fichero inexistente.\n\n");
+        exit(-1);
     }
+    comprobarFicharo(fp);
     fscanf(fp, "%d", &general.numGPs);
     for (int i = 0; i < general.numGPs; ++i) {
         fscanf(fp, "%d", &gpaux.posCalndario);
@@ -113,8 +133,8 @@ General lecturaGPs(char * argv, General general){
         fscanf(fp, "%f", &gpaux.tiempoBase);
         fscanf(fp, "%d", &gpaux.tiempoPinStop);
         fscanf(fp, "%d", &gpaux.numeroPinStop);
-        new_node = newNode(gpaux);
-        sortedInsert(&general.listaGP,new_node);
+        new_node = nuevoNodoGP(gpaux);
+        sortedInsertGP(&general.listaGP,new_node);
     }
     fclose(fp);
     return general;
@@ -132,9 +152,10 @@ General lecturaGPs(char * argv, General general){
 General lecturaCorredores(char * argv, General general){
     FILE * fp = fopen(argv, "r");
     if (fp == NULL) {
-        printf("Error: Fichero de corredores inexistente.\n\n");
-        exit(0);
+        printf("Error: Fichero inexistente.\n\n");
+        exit(-1);
     }
+    comprobarFicharo(fp);
     general.corredor = (Corredor*)malloc(sizeof(Corredor)*7);
     for (int i = 0; i < 7; ++i) {
         fread(&general.corredor[i], sizeof(Corredor), 1, fp);
@@ -154,9 +175,10 @@ General lecturaCorredores(char * argv, General general){
 General lecturaBase(char * argv, General general){
     FILE * fp = fopen(argv, "r");
     if (fp == NULL) {
-        printf("Error: Fichero base inexistente.\n\n");
-        exit(0);
+        printf("Error: Fichero inexistente.\n\n");
+        exit(-1);
     }
+    comprobarFicharo(fp);
     fread(&general.base, sizeof(Base), 1, fp);
     fclose(fp);
     return general;

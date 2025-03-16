@@ -1,9 +1,9 @@
 /***********************************************
 *
 * @Proposito: Almacena las funciones sobre la configuracion de nuestro piloto
-* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandrov44 - blakjord
+* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandro.viana - blai.jordan
 * @Fecha creacion: 3/3/20
-* @Fecha ultima modificacion: 14/03/2025
+* @Fecha ultima modificacion: 26/04/2020
 *
 ************************************************/
 
@@ -13,7 +13,7 @@
 #include "tipos.h"
 #include "grafico.h"
 
-
 void configurarCoche(General general, Coche * coche);
+void PanelConfiguracion(General general, Coche * coche);
 
 #endif //LS_RACING_CONFIGURACION_H

@@ -1,9 +1,9 @@
 /***********************************************
 *
 * @Proposito: Almacena todos los tipos y constantes
-* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandrov44 - blakjord
+* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandro.viana - blai.jordan
 * @Fecha creacion: 3/3/20
-* @Fecha ultima modificacion: 14/03/2025
+* @Fecha ultima modificacion: 26/04/2020
 *
 ************************************************/
 
@@ -15,10 +15,17 @@
 #include <string.h>
 
 #include "LS_allegro.h"
+#include <allegro5/allegro_audio.h>
+#include <allegro5/allegro_acodec.h>
 
 #define anchoPantalla 900
 #define altoPantalla 550
-#define MAXC 25
+#define MAXC 26
+#define MAXPilotos 8
+#define vel "VELOCIDAD"
+#define acel "ACELERACION"
+#define cons "CONSUMO"
+#define fiab "FIABILIDAD"
 
 typedef struct {
     char nombrePieza[MAXC];

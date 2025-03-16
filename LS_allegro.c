@@ -1,9 +1,9 @@
 /***********************************************
 *
 * @Proposito: Almacena las funciones de la libreria LS_ALLEGRO
-* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandrov44 - blakjord
+* @Autor/s: Alejandro Viana Labà - Blai Jordan Borobia | Logins: alejandro.viana - blai.jordan
 * @Fecha creacion: 3/3/20
-* @Fecha ultima modificacion: 14/03/2025
+* @Fecha ultima modificacion: 26/04/2020
 *
 ************************************************/
 
@@ -111,7 +111,7 @@ static int LS_allegro_init_fonts(){
 	
 	//Obtenim el directori on es troba l'executable per poder-hi buscar el fitxer font.ttf
 	getcwd(sFontPath,sizeof(sFontPath));
-	strcat(sFontPath,"/font.ttf");
+	strcat(sFontPath,"/../assets/font.ttf");
 	
 	//Provem de carregar els diferents tamanys de lletra
 	aFonts[SMALL] = al_load_ttf_font(sFontPath,8,0);
